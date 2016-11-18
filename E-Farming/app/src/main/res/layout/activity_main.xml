@@ -1,18 +1,854 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
    xmlns:android="http://schemas.android.com/apk/res/android"
    xmlns:tools="http://schemas.android.com/tools"
-   android:id="@+id/activity_main"
+   xmlns:app="http://schemas.android.com/apk/res-auto"
+   android:id="@+id/createMother"
    android:layout_width="match_parent"
-   android:layout_height="match_parent"
-   android:paddingBottom="@dimen/activity_vertical_margin"
-   android:paddingLeft="@dimen/activity_horizontal_margin"
-   android:paddingRight="@dimen/activity_horizontal_margin"
-   android:paddingTop="@dimen/activity_vertical_margin"
-   tools:context="com.example.takmilul.e_farming.MainActivity">
+   android:layout_height="wrap_content"
+   android:background="#787878"
+   android:focusableInTouchMode="true"
+   android:fitsSystemWindows="true"
+   android:orientation="vertical">
    
-   <TextView
-      android:layout_width="wrap_content"
-      android:layout_height="wrap_content"
-      android:text="Hello World!"/>
-</RelativeLayout>
+   <android.support.v7.widget.Toolbar
+      android:id="@+id/toolbar"
+      android:layout_width="match_parent"
+      android:layout_height="?attr/actionBarSize"
+      android:background="@color/white_10_transparent"
+      android:elevation="4dp"
+      android:fitsSystemWindows="true"
+      app:layout_scrollFlags="scroll|exitUntilCollapsed"
+      app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
+   
+   <ScrollView
+      xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+      
+      <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:layout_margin="16dp"
+         android:orientation="vertical">
+         
+         <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="16dp"
+            android:orientation="horizontal">
+            
+            <RadioButton
+               android:id="@+id/newMotherRBtn"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:paddingRight="16dp"
+               android:text="New Mother"
+               android:textColor="@color/white_70_transparent"/>
+            
+            <RadioButton
+               android:id="@+id/pregnentRBtn"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="Pregnent Woman"
+               android:textColor="@color/white_70_transparent"/>
+         </RadioGroup>
+         
+         <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/login_input_field"
+            android:orientation="vertical">
+            
+            <android.support.design.widget.TextInputLayout
+               android:layout_width="match_parent"
+               android:layout_height="48dp"
+               android:gravity="center_vertical"
+               android:textColorHint="@color/white_70_transparent">
+               
+               <EditText
+                  android:id="@+id/nameET"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:background="#00000000"
+                  android:cursorVisible="true"
+                  android:hint="Name"
+                  android:inputType="textPersonName"
+                  android:paddingLeft="16.0dip"
+                  android:paddingRight="16.0dip"
+                  android:textColor="@color/white"
+                  android:textCursorDrawable="@null"
+                  android:textSize="16sp"/>
+            
+            </android.support.design.widget.TextInputLayout>
+            
+            <FrameLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="5dp">
+               
+               <View
+                  android:id="@+id/underline_view_name"
+                  android:layout_width="match_parent"
+                  android:layout_height="2dp"
+                  android:background="@color/color8"
+                  android:visibility="invisible"/>
+               
+               <View
+                  android:id="@+id/second_underline_view_name"
+                  android:layout_width="match_parent"
+                  android:layout_height="2dp"
+                  android:background="@color/red_5"
+                  android:visibility="invisible"/>
+            
+            </FrameLayout>
+         
+         </LinearLayout>
+         
+         <TextView
+            android:id="@+id/nameErrorTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="50"
+            android:textAppearance="?android:attr/textAppearanceSmall"/>
+         
+         <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/login_input_field"
+            android:orientation="vertical">
+            
+            <android.support.design.widget.TextInputLayout
+               android:layout_width="match_parent"
+               android:layout_height="48dp"
+               android:gravity="center_vertical"
+               android:textColorHint="@color/white_70_transparent">
+               
+               <EditText
+                  android:id="@+id/passwordET"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:background="#00000000"
+                  android:cursorVisible="true"
+                  android:hint="Password"
+                  android:inputType="textPassword"
+                  android:paddingLeft="16.0dip"
+                  android:paddingRight="16.0dip"
+                  android:singleLine="true"
+                  android:textColor="@color/white"
+                  android:textColorHint="@color/white_70_transparent"
+                  android:textCursorDrawable="@null"
+                  android:textSize="16sp"/>
+            
+            </android.support.design.widget.TextInputLayout>
+            
+            <FrameLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="5dp">
+               
+               <View
+                  android:id="@+id/underline_view_password"
+                  android:layout_width="match_parent"
+                  android:layout_height="2dp"
+                  android:background="@color/color8"
+                  android:visibility="invisible"/>
+               
+               <View
+                  android:id="@+id/second_underline_view_password"
+                  android:layout_width="match_parent"
+                  android:layout_height="2dp"
+                  android:background="@color/red_5"
+                  android:visibility="invisible"/>
+            
+            </FrameLayout>
+         </LinearLayout>
+         
+         <TextView
+            android:id="@+id/passwordErrorTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="50"
+            android:textAppearance="?android:attr/textAppearanceSmall"/>
+         
+         <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/login_input_field"
+            android:orientation="vertical">
+            
+            <android.support.design.widget.TextInputLayout
+               android:layout_width="match_parent"
+               android:layout_height="48dp"
+               android:gravity="center_vertical"
+               android:textColorHint="@color/white_70_transparent">
+               
+               <EditText
+                  android:id="@+id/retypeET"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:background="@null"
+                  android:cursorVisible="true"
+                  android:hint="Retype Password"
+                  android:inputType="textPassword"
+                  android:paddingLeft="16.0dip"
+                  android:paddingRight="16.0dip"
+                  android:singleLine="true"
+                  android:textColor="@color/white"
+                  android:textCursorDrawable="@null"
+                  android:textSize="16sp"/>
+            
+            </android.support.design.widget.TextInputLayout>
+            
+            <FrameLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="5dp">
+               
+               <View
+                  android:id="@+id/underline_view_retype_password"
+                  android:layout_width="match_parent"
+                  android:layout_height="2dp"
+                  android:background="@color/color8"
+                  android:visibility="invisible"/>
+               
+               <View
+                  android:id="@+id/second_underline_view_retype_password"
+                  android:layout_width="match_parent"
+                  android:layout_height="2dp"
+                  android:background="@color/red_5"
+                  android:visibility="invisible"/>
+            
+            </FrameLayout>
+         </LinearLayout>
+         
+         <TextView
+            android:id="@+id/retypePasswordErrorTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="50"
+            android:textAppearance="?android:attr/textAppearanceSmall"/>
+         
+         <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/login_input_field"
+            android:orientation="vertical">
+            
+            <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:background="@drawable/login_input_field"
+               android:orientation="vertical">
+               
+               <android.support.design.widget.TextInputLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="48dp"
+                  android:gravity="center_vertical"
+                  android:textColorHint="@color/white_70_transparent">
+                  
+                  <EditText
+                     android:id="@+id/adressET"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:background="@null"
+                     android:cursorVisible="true"
+                     android:hint="Address"
+                     android:inputType="textMultiLine"
+                     android:paddingLeft="16.0dip"
+                     android:paddingRight="16.0dip"
+                     android:singleLine="true"
+                     android:textColor="@color/white"
+                     android:textCursorDrawable="@null"
+                     android:textSize="16sp"/>
+               
+               </android.support.design.widget.TextInputLayout>
+               
+               <FrameLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="5dp">
+                  
+                  <View
+                     android:id="@+id/underline_view_address"
+                     android:layout_width="match_parent"
+                     android:layout_height="2dp"
+                     android:background="@color/color8"
+                     android:visibility="invisible"/>
+                  
+                  <View
+                     android:id="@+id/second_underline_view_address"
+                     android:layout_width="match_parent"
+                     android:layout_height="2dp"
+                     android:background="@color/red_5"
+                     android:visibility="invisible"/>
+               
+               </FrameLayout>
+            </LinearLayout>
+            
+            <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:paddingLeft="22dp">
+               
+               <Spinner
+                  android:id="@+id/unionSpnr"
+                  android:layout_width="0dp"
+                  android:layout_height="wrap_content"
+                  android:layout_weight="50"/>
+               
+               <Spinner
+                  android:id="@+id/thanaSpnr"
+                  android:layout_width="0dp"
+                  android:layout_height="wrap_content"
+                  android:layout_weight="50"/>
+            </LinearLayout>
+            
+            
+            <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:paddingLeft="22dp">
+               
+               <Spinner
+                  android:id="@+id/districtSpnr"
+                  android:layout_width="0dp"
+                  android:layout_height="wrap_content"
+                  android:layout_weight="50"/>
+               
+               <Spinner
+                  android:id="@+id/divisionSpnr"
+                  android:layout_width="0dp"
+                  android:layout_height="wrap_content"
+                  android:layout_weight="50"/>
+            
+            </LinearLayout>
+         </LinearLayout>
+         
+         <TextView
+            android:id="@+id/addressErrorTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"/>
+         
+         <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/login_input_field"
+            android:orientation="vertical">
+            
+            <android.support.design.widget.TextInputLayout
+               android:layout_width="match_parent"
+               android:layout_height="48dp"
+               android:gravity="center_vertical"
+               android:textColorHint="@color/white_70_transparent">
+               
+               <EditText
+                  android:id="@+id/mobileNoET"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:background="@null"
+                  android:cursorVisible="true"
+                  android:hint="Mobile No"
+                  android:inputType="phone"
+                  android:paddingLeft="16.0dip"
+                  android:paddingRight="16.0dip"
+                  android:singleLine="true"
+                  android:textColor="@color/white"
+                  android:textCursorDrawable="@null"
+                  android:textSize="16sp"/>
+            
+            </android.support.design.widget.TextInputLayout>
+            
+            <FrameLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="5dp">
+               
+               <View
+                  android:id="@+id/underline_view_mobile_no"
+                  android:layout_width="match_parent"
+                  android:layout_height="2dp"
+                  android:background="@color/color8"
+                  android:visibility="invisible"/>
+               
+               <View
+                  android:id="@+id/second_underline_view_mobile_no"
+                  android:layout_width="match_parent"
+                  android:layout_height="2dp"
+                  android:background="@color/red_5"
+                  android:visibility="invisible"/>
+            
+            </FrameLayout>
+         </LinearLayout>
+         
+         <TextView
+            android:id="@+id/mobileErrorTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"/>
+         
+         <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/login_input_field"
+            android:orientation="vertical">
+            
+            <android.support.design.widget.TextInputLayout
+               android:layout_width="match_parent"
+               android:layout_height="48dp"
+               android:gravity="center_vertical"
+               android:textColorHint="@color/white_70_transparent">
+               
+               <EditText
+                  android:id="@+id/guardianMobileNoET"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:background="@null"
+                  android:cursorVisible="true"
+                  android:hint="Guardian's Mobile No"
+                  android:inputType="phone"
+                  android:paddingLeft="16.0dip"
+                  android:paddingRight="16.0dip"
+                  android:singleLine="true"
+                  android:textColor="@color/white"
+                  android:textCursorDrawable="@null"
+                  android:textSize="16sp"/>
+            
+            </android.support.design.widget.TextInputLayout>
+            
+            <FrameLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="5dp">
+               
+               <View
+                  android:id="@+id/underline_view_guardian_mobile_no"
+                  android:layout_width="match_parent"
+                  android:layout_height="2dp"
+                  android:background="@color/color8"
+                  android:visibility="invisible"/>
+               
+               <View
+                  android:id="@+id/second_underline_view_guardian_mobile_no"
+                  android:layout_width="match_parent"
+                  android:layout_height="2dp"
+                  android:background="@color/red_5"
+                  android:visibility="invisible"/>
+            
+            </FrameLayout>
+         </LinearLayout>
+         
+         <TextView
+            android:id="@+id/guardiantsMobileErrorTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"/>
+         
+         <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/login_input_field"
+            android:orientation="vertical">
+            
+            <android.support.design.widget.TextInputLayout
+               android:layout_width="match_parent"
+               android:layout_height="48dp"
+               android:gravity="center_vertical"
+               android:textColorHint="@color/white_70_transparent">
+               
+               <EditText
+                  android:id="@+id/monthlyIncomeET"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:background="@null"
+                  android:cursorVisible="true"
+                  android:hint="Monthly Income"
+                  android:inputType="numberSigned"
+                  android:paddingLeft="16.0dip"
+                  android:paddingRight="16.0dip"
+                  android:singleLine="true"
+                  android:textColor="@color/white"
+                  android:textCursorDrawable="@null"
+                  android:textSize="16sp"/>
+            
+            </android.support.design.widget.TextInputLayout>
+            
+            <FrameLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="5dp">
+               
+               <View
+                  android:id="@+id/underline_view_monthly_income"
+                  android:layout_width="match_parent"
+                  android:layout_height="2dp"
+                  android:background="@color/color8"
+                  android:visibility="invisible"/>
+               
+               <View
+                  android:id="@+id/second_underline_view_monthly_income"
+                  android:layout_width="match_parent"
+                  android:layout_height="2dp"
+                  android:background="@color/red_5"
+                  android:visibility="invisible"/>
+            
+            </FrameLayout>
+         </LinearLayout>
+         
+         <TextView
+            android:id="@+id/monthlyIncomeErrorTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"/>
+         
+         <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/login_input_field"
+            android:orientation="vertical">
+            
+            <android.support.design.widget.TextInputLayout
+               android:layout_width="match_parent"
+               android:layout_height="48dp"
+               android:gravity="center_vertical"
+               android:textColorHint="@color/white_70_transparent">
+               
+               <EditText
+                  android:id="@+id/dateOfBirthET"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:background="@null"
+                  android:editable="false"
+                  android:cursorVisible="false"
+                  android:hint="Date of Birth"
+                  android:onClick="datePicker"
+                  android:paddingLeft="16.0dip"
+                  android:paddingRight="16.0dip"
+                  android:textColor="@color/white"
+                  android:textCursorDrawable="@null"
+                  android:textSize="16sp"/>
+            
+            </android.support.design.widget.TextInputLayout>
+            
+            <FrameLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="5dp">
+               
+               <View
+                  android:id="@+id/underline_view_dob"
+                  android:layout_width="match_parent"
+                  android:layout_height="2dp"
+                  android:background="@color/color8"
+                  android:visibility="invisible"/>
+               
+               <View
+                  android:id="@+id/second_underline_view_dob"
+                  android:layout_width="match_parent"
+                  android:layout_height="2dp"
+                  android:background="@color/red_5"
+                  android:visibility="invisible"/>
+            
+            </FrameLayout>
+         
+         </LinearLayout>
+         
+         <TextView
+            android:id="@+id/dateOfBirthErrorTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"/>
+         
+         <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80.0dip"
+            android:background="@drawable/login_input_field"
+            android:orientation="vertical"
+            android:paddingLeft="16.0dip"
+            android:paddingRight="16.0dip"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white_70_transparent"
+            android:textCursorDrawable="@null"
+            android:textSize="16sp">
+            
+            <TextView
+               android:id="@+id/bloodGroupTV"
+               android:layout_width="match_parent"
+               android:layout_height="40.0dip"
+               android:gravity="center_vertical"
+               android:hint="Blood Group"
+               android:textColor="@color/white_70_transparent"
+               android:textColorHint="@color/white_70_transparent"
+               android:textSize="16.0dip"/>
+            
+            <Spinner
+               android:id="@+id/bloodGroupSpnr"
+               android:layout_width="match_parent"
+               android:layout_height="40.0dip"
+               android:layout_weight="50"/>
+         
+         </LinearLayout>
+         
+         <TextView
+            android:id="@+id/bloodGroupErrorTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"/>
+         
+         <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/login_input_field"
+            android:orientation="vertical">
+            
+            <android.support.design.widget.TextInputLayout
+               android:layout_width="match_parent"
+               android:layout_height="48dp"
+               android:gravity="center_vertical"
+               android:textColorHint="@color/white_70_transparent">
+               
+               <EditText
+                  android:id="@+id/weightET"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:background="@null"
+                  android:cursorVisible="true"
+                  android:hint="Weight"
+                  android:inputType="numberDecimal"
+                  android:paddingLeft="16.0dip"
+                  android:paddingRight="16.0dip"
+                  android:singleLine="true"
+                  android:textColor="@color/white"
+                  android:textCursorDrawable="@null"
+                  android:textSize="16sp"/>
+            
+            </android.support.design.widget.TextInputLayout>
+            
+            <FrameLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="5dp">
+               
+               <View
+                  android:id="@+id/underline_view_weight"
+                  android:layout_width="match_parent"
+                  android:layout_height="2dp"
+                  android:background="@color/color8"
+                  android:visibility="invisible"/>
+               
+               <View
+                  android:id="@+id/second_underline_view_weight"
+                  android:layout_width="match_parent"
+                  android:layout_height="2dp"
+                  android:background="@color/red_5"
+                  android:visibility="invisible"/>
+            
+            </FrameLayout>
+         </LinearLayout>
+         
+         <TextView
+            android:id="@+id/weightErrorTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"/>
+         
+         <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/login_input_field"
+            android:orientation="vertical">
+            
+            <android.support.design.widget.TextInputLayout
+               android:layout_width="match_parent"
+               android:layout_height="48dp"
+               android:gravity="center_vertical"
+               android:textColorHint="@color/white_70_transparent">
+               
+               <EditText
+                  android:id="@+id/heightET"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:background="@null"
+                  android:cursorVisible="true"
+                  android:hint="Height"
+                  android:inputType="numberDecimal"
+                  android:paddingLeft="16.0dip"
+                  android:paddingRight="16.0dip"
+                  android:singleLine="true"
+                  android:textColor="@color/white"
+                  android:textCursorDrawable="@null"
+                  android:textSize="16sp"/>
+            
+            </android.support.design.widget.TextInputLayout>
+            
+            <FrameLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="5dp">
+               
+               <View
+                  android:id="@+id/underline_view_height"
+                  android:layout_width="match_parent"
+                  android:layout_height="2dp"
+                  android:background="@color/color8"
+                  android:visibility="invisible"/>
+               
+               <View
+                  android:id="@+id/second_underline_view_height"
+                  android:layout_width="match_parent"
+                  android:layout_height="2dp"
+                  android:background="@color/red_5"
+                  android:visibility="invisible"/>
+            
+            </FrameLayout>
+         </LinearLayout>
+         
+         <TextView
+            android:id="@+id/heightErrorTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"/>
+         
+         <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/login_input_field"
+            android:orientation="vertical">
+            
+            <android.support.design.widget.TextInputLayout
+               android:layout_width="match_parent"
+               android:layout_height="48dp"
+               android:gravity="center_vertical"
+               android:textColorHint="@color/white_70_transparent">
+               
+               <EditText
+                  android:id="@+id/majorDiseaseET"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:background="@null"
+                  android:cursorVisible="true"
+                  android:hint="Major Disease"
+                  android:inputType="textPersonName"
+                  android:paddingLeft="16.0dip"
+                  android:paddingRight="16.0dip"
+                  android:singleLine="true"
+                  android:textColor="@color/white"
+                  android:textCursorDrawable="@null"
+                  android:textSize="16sp"/>
+            
+            </android.support.design.widget.TextInputLayout>
+            
+            <FrameLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="5dp">
+               
+               <View
+                  android:id="@+id/underline_view_major_disease"
+                  android:layout_width="match_parent"
+                  android:layout_height="2dp"
+                  android:background="@color/color8"
+                  android:visibility="invisible"/>
+               
+               <View
+                  android:id="@+id/second_underline_view_major_disease"
+                  android:layout_width="match_parent"
+                  android:layout_height="2dp"
+                  android:background="@color/red_5"
+                  android:visibility="invisible"/>
+            
+            </FrameLayout>
+         </LinearLayout>
+         
+         <TextView
+            android:id="@+id/majorDiseaseErrorTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"/>
+         
+         <LinearLayout
+            android:id="@+id/pregnancyPeriodEnableDisable"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/login_input_field"
+            android:orientation="vertical">
+            
+            <android.support.design.widget.TextInputLayout
+               android:layout_width="match_parent"
+               android:layout_height="48dp"
+               android:gravity="center_vertical"
+               android:textColorHint="@color/white_70_transparent">
+               
+               <EditText
+                  android:id="@+id/pregnencyPeriodET"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:background="@null"
+                  android:cursorVisible="true"
+                  android:hint="Pregnancy Period"
+                  android:inputType="numberDecimal"
+                  android:paddingLeft="16.0dip"
+                  android:paddingRight="16.0dip"
+                  android:singleLine="true"
+                  android:textColor="@color/white"
+                  android:textCursorDrawable="@null"
+                  android:textSize="16sp"/>
+            
+            </android.support.design.widget.TextInputLayout>
+            
+            <FrameLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="5dp">
+               
+               <View
+                  android:id="@+id/underline_view_pregnancy_period"
+                  android:layout_width="match_parent"
+                  android:layout_height="2dp"
+                  android:background="@color/color8"
+                  android:visibility="invisible"/>
+               
+               <View
+                  android:id="@+id/second_underline_view_pregnancy_period"
+                  android:layout_width="match_parent"
+                  android:layout_height="2dp"
+                  android:background="@color/red_5"
+                  android:visibility="invisible"/>
+            
+            </FrameLayout>
+         </LinearLayout>
+         
+         <TextView
+            android:id="@+id/pregnancyPeriodErrorTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"/>
+         
+         <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            
+            <ProgressBar
+               android:id="@+id/pbbar"
+               android:layout_width="32.0dip"
+               android:layout_height="32.0dip"
+               android:layout_gravity="center"
+               android:indeterminate="true"/>
+            
+            <TextView
+               android:id="@+id/saveButton"
+               android:layout_width="match_parent"
+               android:layout_height="48.0dip"
+               android:background="@drawable/button_border"
+               android:gravity="center"
+               android:text="Save"
+               android:textColor="@color/white_80_transparent"
+               android:textSize="16sp"
+               android:textStyle="bold"/>
+         </FrameLayout>
+      </LinearLayout>
+   </ScrollView>
+</LinearLayout>
