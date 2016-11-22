@@ -1,3 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-   <string name="app_name">E-Farming</string>
+   <string name="app_name">ই-ফারমিং</string>
+   <string name="name">নামঃ</string>
+   <string name="save">সেভ</string>
+   <string name="nid">এন.আই.ডিঃ</string>
+   <string name="address">ঠিকানাঃ</string>
+   <string name="mobile">মোবাইলঃ</string>
+   <string name="typeOfField">জমির ধরনঃ</string>
+   <string name="status">মন্তব্যঃ</string>
+   <string name="typeOfCrops">ফসলের ধরন</string>
+   <string name="rice">ধান</string>
+   <string name="jute">পাট</string>
+   <string name="wheat">গম</string>
+   <string name="sugarCane">আখ</string>
 </resources>
